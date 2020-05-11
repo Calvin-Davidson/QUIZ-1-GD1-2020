@@ -22,32 +22,32 @@
                 }
             ]
         },
-        {   "question": "What’s more important for preventing infection?",
+        {   "question": "What is a list with strings in c#",
             "answers": [{
-                    "answer": "Frequent hand-washing",
+                    "answer": "List<string> strings = new List<String>();",
                     "feedback": true
                 },
                 {
-                    "answer": "Wearing a face mask",
+                    "answer": "let strings = [];",
                     "feedback": false
                 }
             ]
         },
-        {   "question": "Who’s at highest risk of developing severe Covid-19 disease?",
+        {   "question": "A memoty location that holds a single letter or number",
             "answers": [{
-                    "answer": "Children",
-                    "feedback": false
-                },
-                {
-                    "answer": "People over 60 years of age",
+                    "answer": "char",
                     "feedback": true
                 },
                 {
-                    "answer": "Pregnant women",
+                    "answer": "int",
                     "feedback": false
                 },
                 {
-                    "answer": "Those with existing medical conditions",
+                    "answer": "string",
+                    "feedback": false
+                },
+                {
+                    "answer": "double",
                     "feedback": false
                 }
             ]

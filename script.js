@@ -40,16 +40,19 @@ function initQuiz(){
 function prepareQuestions() {
   hasAnswered = false;
   questionBox.className = "questionBox-new";
-  let quizImage = quiz.quizMetaData.imageURI;
-  quizWrapper.style.backgroundImage = "url("+ quizImage + ")";
+
+  quizWrapper.style.backgroundImage = "url("+ quiz.quizMetaData.imageURI; + ")";
+
   if (counter < quiz.quizContent.length) {
     myQuestion.innerHTML = quiz.quizContent[counter].question;
     myAnswer.innerHTML = "";
     for (let i = 0; i < quiz.quizContent[counter].answers.length; i++) {
+
       let answer = document.createElement('li');
       answer.className = "answer";
       answer.score = quiz.quizContent[counter].answers[i].feedback;
       answer.innerHTML = quiz.quizContent[counter].answers[i].answer;
+
       myAnswer.appendChild(answer);
       myAnswer.addEventListener('click', evaluate, true)
     }
@@ -60,6 +63,7 @@ function prepareQuestions() {
 
 function evaluate(evt) {
   if (hasAnswered) return;
+  if (evt.target.className == "myAnswer") return;
 
   if (evt.target.score) {
     evt.target.className = "right";
@@ -76,9 +80,27 @@ function evaluate(evt) {
 }
 
 function finishQuiz() {
-  questionBox.style.display = "none";
-  resultBox.style.display = "block";
+  hasAnswered = true;
+  console.log("quiz finished!")
+
+  myAnswer.innerHTML = "";
+  myQuestion.innerHTML = "results";
+
+  let answer1 = document.createElement('li');
+  answer1.className = "Result";
+  answer1.innerHTML = "Name: " + playerData.name;
+
+  let answer2 = document.createElement('li');
+  answer2.className = "Result";
+  answer2.innerHTML = "Goede antwoorden: " + playerData.goodAnswers;
+
+  let answer3 = document.createElement('li');
+  answer3.className = "Result";
+  answer3.innerHTML = "foute antwoorden: " + playerData.wrongAnswers;
+
+  myAnswer.appendChild(answer1);
+  myAnswer.appendChild(answer2);
+  myAnswer.appendChild(answer3);
 }
 
-// Start de game.
 init();
