@@ -18,14 +18,14 @@ body{
   overflow: hidden;
   width: 80%;
   margin: auto;
-  border: 4px solid magenta;
+  border: 4px solid #ff8f2f;
   background-color: black;
 }
 #myQuestion{
   color: gray;
 }
 #myQuestion::first-letter{
-  color: magenta;
+  color: #FF8F2F;
 }
 .questionBox{
   padding: 20px;
@@ -50,7 +50,7 @@ body{
   list-style-type: none;
   padding: 10px;
   background-color:white;
-  border:4px solid magenta;
+  border:4px solid #FF8F2F;
   border-radius: 12px;
   margin: 15px;
 }

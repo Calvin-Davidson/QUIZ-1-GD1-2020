@@ -1,24 +1,28 @@
-const delayTime = 2000; // wachttijd voor de volgende vraag
+const delayTime = 1000; // wachttijd voor de volgende vraag
 const myQuestion = document.getElementById('myQuestion');
 const myAnswer = document.getElementById('myAnswer');
 const quizWrapper = document.getElementById('quizWrapper');
 const questionBox = document.getElementById('questionBox');
 const resultBox = document.getElementById('resultBox');
 
-let quizJsonFile = "quiz2.json"; // het JSON bestand met de quizz
+let Questions;
+let quizJsonFile = "QuizVragen/quiz2.json"; // het JSON bestand met de quizz
 
 let counter = 0;
 let quiz;
 let playerData = {}; // object, hierin worden de game gegevens opgeslagen
 
+let hasAnswered = false;
+
 function init(){
+  Questions = getAllQuestions();
   // haal de data op met AJAX
-  makeAjaxCall (quizJsonFile, "GET").then (handleReceivedData); // doe het! wacht op promise
+  makeAjaxCall (quizJsonFile, "GET").then(handleReceivedData); // doe het! wacht op promise
   function handleReceivedData(jsonString){ // pak de data aan
     let quizString = jsonString;
-    // console.log(quizString); // debug
+    //console.log(quizString); // debug
     quiz = JSON.parse(quizString);
-    console.log(quiz); // debug
+    //console.log(quiz); // debug
     initQuiz(); // start de quiz
   }
 }
@@ -27,12 +31,14 @@ function initQuiz(){
   // reset alle player game variabelen
   playerData.goodAnswers = 0;
   playerData.wrongAnswers = 0;
-  playerName = ""; // toekomstige uitbreiding naam speler opvragen
+  let name = prompt("wat is uw naam?")
+  playerData.name = name; // toekomstige uitbreiding naam speler opvragen
   resultBox.style.display = "none"; // verberg de resultbox
   prepareQuestions(); // start de quiz
 }
 
 function prepareQuestions() {
+  hasAnswered = false;
   questionBox.className = "questionBox-new";
   let quizImage = quiz.quizMetaData.imageURI;
   quizWrapper.style.backgroundImage = "url("+ quizImage + ")";
@@ -53,6 +59,8 @@ function prepareQuestions() {
 }
 
 function evaluate(evt) {
+  if (hasAnswered) return;
+
   if (evt.target.score) {
     evt.target.className = "right";
     playerData.goodAnswers += 1; // increase good score
@@ -62,6 +70,8 @@ function evaluate(evt) {
   }
   counter++;
   questionBox.className = "questionBox";
+  
+  hasAnswered = true;
   setTimeout(prepareQuestions, delayTime);
 }
 
@@ -70,4 +80,5 @@ function finishQuiz() {
   resultBox.style.display = "block";
 }
 
-init(); // start it
+// Start de game.
+init();

@@ -2,24 +2,23 @@
     "quizID": "Corona",
     "quizMetaData":
     {
-        "title": "Corona Virus Knowledge",
+        "title": "The Programming quiz",
         "imageURI": "https://images.unsplash.com/photo-1583324113626-70df0f4deaab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-
     },
     "quizContent":
     [ 
-        {   "question": "How long does the covid-19 survive outside the body??",
+        {   "question": "wat is een bestaande taal",
             "answers": [{
-                    "answer": "A week in the air and on surfaces",
+                    "answer": "xsp",
                     "feedback": false
                 },
                 {
-                    "answer": "Several hours to days",
+                    "answer": "c-=",
+                    "feedback": false
+                },
+                {
+                    "answer": "java",
                     "feedback": true
-                },
-                {
-                    "answer": "Up to two and a half weeks",
-                    "feedback": false
                 }
             ]
         },
