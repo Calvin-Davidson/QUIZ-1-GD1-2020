@@ -5,7 +5,6 @@ const quizWrapper = document.getElementById('quizWrapper');
 const questionBox = document.getElementById('questionBox');
 const resultBox = document.getElementById('resultBox');
 
-let Questions;
 let quizJsonFile = "QuizVragen/quiz2.json"; // het JSON bestand met de quizz
 
 let counter = 0;
@@ -17,8 +16,6 @@ let hasAnswered = false;
 let VragenVolgorde = [];
 
 function init() {
-    Questions = getAllQuestions();
-    // haal de data op met AJAX
     makeAjaxCall(quizJsonFile, "GET").then(handleReceivedData); // doe het! wacht op promise
     function handleReceivedData(jsonString) { // pak de data aan
         quiz = JSON.parse(jsonString);

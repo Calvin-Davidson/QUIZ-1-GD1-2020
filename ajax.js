@@ -24,15 +24,6 @@ function makeAjaxCall(url, methodType) {
     return promiseObj;
 }
 
-function getAllQuestions() {
-    let Questions = [];
-
-    Questions.push("QuizVragen/quiz1");
-    Questions.push("QuizVragen/quiz2");
-
-    return Questions;
-}
-
 function errorHandler(statusCode) {
     console.log("ajax call failed with status", status);
 }

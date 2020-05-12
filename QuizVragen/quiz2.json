@@ -3,7 +3,7 @@
     "quizMetaData":
     {
         "title": "The Programming quiz",
-        "imageURI": "https://images.unsplash.com/photo-1583324113626-70df0f4deaab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+        "imageURI": "https://thumbs.dreamstime.com/b/script-programming-code-background-script-fictitious-programming-code-background-java-language-abstract-pattern-computer-program-107163861.jpg"
     },
     "quizContent":
     [ 
@@ -33,7 +33,7 @@
                 }
             ]
         },
-        {   "question": "A memoty location that holds a single letter or number",
+        {   "question": "A Memory location that holds a single letter or number",
             "answers": [{
                     "answer": "char",
                     "feedback": true
