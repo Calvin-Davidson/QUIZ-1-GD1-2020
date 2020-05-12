@@ -89,10 +89,10 @@ body{
 .Result {
   padding: 10px;
   color:white;
-  border:4px solid black;
+  border:4px solid orange;
   border-radius: 12px;
   margin: 5px;
-  background-color: green;
+  background-color: gray;
   animation-name: resultAnimation;
   animation-duration: 2s;
 }

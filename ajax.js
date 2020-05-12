@@ -18,7 +18,7 @@ function makeAjaxCall(url, methodType) {
             } else {
                 console.log("xmlhttp processing going on"); // debug
             }
-        }
+        };
         console.log("request sent succesfully"); // debug
     });
     return promiseObj;

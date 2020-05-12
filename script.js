@@ -14,14 +14,14 @@ let playerData = {}; // object, hierin worden de game gegevens opgeslagen
 
 let hasAnswered = false;
 
+let VragenVolgorde = [];
+
 function init(){
   Questions = getAllQuestions();
   // haal de data op met AJAX
   makeAjaxCall (quizJsonFile, "GET").then(handleReceivedData); // doe het! wacht op promise
   function handleReceivedData(jsonString){ // pak de data aan
-    let quizString = jsonString;
-    //console.log(quizString); // debug
-    quiz = JSON.parse(quizString);
+    quiz = JSON.parse(jsonString);
     //console.log(quiz); // debug
     initQuiz(); // start de quiz
   }
@@ -31,8 +31,15 @@ function initQuiz(){
   // reset alle player game variabelen
   playerData.goodAnswers = 0;
   playerData.wrongAnswers = 0;
-  let name = prompt("wat is uw naam?")
-  playerData.name = name; // toekomstige uitbreiding naam speler opvragen
+  playerData.name = prompt("wat is uw naam?"); // toekomstige uitbreiding naam speler opvragen
+  
+  VragenVolgorde = [];
+
+  for (let i = 0; i < quiz.quizContent.length; i++) {
+    VragenVolgorde.push(i);
+  }
+  VragenVolgorde = shuffleArray(VragenVolgorde);
+
   resultBox.style.display = "none"; // verberg de resultbox
   prepareQuestions(); // start de quiz
 }
@@ -43,15 +50,15 @@ function prepareQuestions() {
 
   quizWrapper.style.backgroundImage = "url("+ quiz.quizMetaData.imageURI; + ")";
 
-  if (counter < quiz.quizContent.length) {
-    myQuestion.innerHTML = quiz.quizContent[counter].question;
+  if (counter < VragenVolgorde.length) {
+    myQuestion.innerHTML = quiz.quizContent[VragenVolgorde[counter]].question;
     myAnswer.innerHTML = "";
-    for (let i = 0; i < quiz.quizContent[counter].answers.length; i++) {
+    for (let i = 0; i < quiz.quizContent[VragenVolgorde[counter]].answers.length; i++) {
 
       let answer = document.createElement('li');
       answer.className = "answer";
-      answer.score = quiz.quizContent[counter].answers[i].feedback;
-      answer.innerHTML = quiz.quizContent[counter].answers[i].answer;
+      answer.score = quiz.quizContent[VragenVolgorde[counter]].answers[i].feedback;
+      answer.innerHTML = quiz.quizContent[VragenVolgorde[counter]].answers[i].answer;
 
       myAnswer.appendChild(answer);
       myAnswer.addEventListener('click', evaluate, true)
@@ -63,7 +70,7 @@ function prepareQuestions() {
 
 function evaluate(evt) {
   if (hasAnswered) return;
-  if (evt.target.className == "myAnswer") return;
+  if (evt.target.className === "myAnswer") return;
 
   if (evt.target.score) {
     evt.target.className = "right";
@@ -79,9 +86,9 @@ function evaluate(evt) {
   setTimeout(prepareQuestions, delayTime);
 }
 
+// word getriggerd wanneer de quiz af is.
 function finishQuiz() {
   hasAnswered = true;
-  console.log("quiz finished!")
 
   myAnswer.innerHTML = "";
   myQuestion.innerHTML = "results";
@@ -104,3 +111,4 @@ function finishQuiz() {
 }
 
 init();
+
