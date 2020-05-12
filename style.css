@@ -28,7 +28,7 @@ body{
   background-color: black;
 }
 #myQuestion{
-  color: gray;
+  color: white;
 }
 #myQuestion::first-letter{
   color: #FF8F2F;
@@ -64,6 +64,7 @@ body{
   background-color: yellow;
   cursor: pointer;
 }
+
 .right {
   padding: 10px;
   color:white;
@@ -95,4 +96,17 @@ body{
   background-color: gray;
   animation-name: resultAnimation;
   animation-duration: 2s;
+}
+
+.quizOption {
+  list-style-type: none;
+  padding: 10px;
+  background-color:white;
+  border:4px solid #FF8F2F;
+  border-radius: 12px;
+  margin: 15px;
+}
+.quizOption:hover{
+  background-color: yellow;
+  cursor: pointer;
 }

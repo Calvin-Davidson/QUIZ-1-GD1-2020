@@ -5,7 +5,7 @@ const quizWrapper = document.getElementById('quizWrapper');
 const questionBox = document.getElementById('questionBox');
 const resultBox = document.getElementById('resultBox');
 
-let quizJsonFile = "QuizVragen/quiz2.json"; // het JSON bestand met de quizz
+let quizJsonFiles = ["QuizVragen/quiz2.json", "QuizVragen/quiz1.json"]; // het JSON bestand met de quizz
 
 let counter = 0;
 let quiz;
@@ -15,8 +15,8 @@ let hasAnswered = false;
 
 let VragenVolgorde = [];
 
-function init() {
-    makeAjaxCall(quizJsonFile, "GET").then(handleReceivedData); // doe het! wacht op promise
+function init(path) {
+    makeAjaxCall(path, "GET").then(handleReceivedData); // doe het! wacht op promise
     function handleReceivedData(jsonString) { // pak de data aan
         quiz = JSON.parse(jsonString);
         //console.log(quiz); // debug
@@ -36,6 +36,7 @@ function initQuiz() {
     for (let i = 0; i < quiz.quizContent.length; i++) {
         VragenVolgorde.push(i);
     }
+
     VragenVolgorde = shuffleArray(VragenVolgorde);
 
     resultBox.style.display = "none"; // verberg de resultbox
@@ -114,6 +115,3 @@ function finishQuiz() {
     myAnswer.appendChild(GoodPoints);
     myAnswer.appendChild(WrongPoints);
 }
-
-init();
-

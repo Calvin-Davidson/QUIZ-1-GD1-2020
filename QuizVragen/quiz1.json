@@ -1,71 +1,148 @@
 {
-    "quizID": "Bla Bla Questions",
-    "quizMetaData":
-    {
-        "title": "Bla Bla Knowledge",
-        "imageURI": "https://sd.keepcalms.com/i-w600/keep-calm-and-dont-ask-stupid-questions.jpg"
-    },
-    "quizContent":		
-		[
-			{
-				"question": "Wie ontwierp de Eiffeltoren?",
-				"answers": [{
-						"answer": "Eiffel",
-						"feedback": true
-					},
-					{
-						"answer": "Berlage",
-						"feedback": false
-					},
-					{
-						"answer": "Edison",
-						"feedback": false
-					},
-					{
-						"answer": "James Watt",
-						"feedback": false
-					}
-				]
-			},
-			{
-				"question": "In welke kleuren speelt blauw-wit?",
-				"answers": [{
-						"answer": "blauw en wit",
-						"feedback": true
-					},
-					{
-						"answer": "groen en geel",
-						"feedback": false
-					},
-					{
-						"answer": "rood en wit",
-						"feedback": false
-					},
-					{
-						"answer": "rood en blauw",
-						"feedback": false
-					}
-				]
-			},
-			{
-				"question": "Wat is de voornaam van Eddy Merckx?",
-				"answers": [{
-						"answer": "Jelle",
-						"feedback": false
-					},
-					{
-						"answer": "Ed",
-						"feedback": false
-					},
-					{
-						"answer": "Eddy",
-						"feedback": true
-					},
-					{
-						"answer": "Gerrit",
-						"feedback": false
-					}
-				]
-			}
-		]
-	}
+	"quizID": "1",
+	"quizMetaData": {
+		"title": "Java quiz",
+		"imageURI": "https://thumbs.dreamstime.com/b/script-programming-code-background-script-fictitious-programming-code-background-java-language-abstract-pattern-computer-program-107163861.jpg"
+	},
+	"quizContent": [
+		{
+			"question": "What is a correcy syntax to output, 'Hello World' in java",
+			"answers": [
+				{
+					"answer": "System.out.println('Hello World');",
+					"feedback": true
+				},
+				{
+					"answer": "print('Hello World');",
+					"feedback": false
+				},
+				{
+					"answer": "Console.WirteLine('Hello World');",
+					"feedback": false
+				},
+				{
+					"answer": "echo('Hello World');",
+					"feedback": false
+				}
+			]
+		},
+		{
+			"question": "java is short for javascript",
+			"answers": [
+				{
+					"answer": "true",
+					"feedback": false
+				},
+				{
+					"answer": "false",
+					"feedback": true
+				}
+			]
+		},
+		{
+			"question": "How to you insert COMMENTS in java code",
+			"answers": [
+				{
+					"answer": "// this is a comment",
+					"feedback": true
+				},
+				{
+					"answer": "/* this is a comment",
+					"feedback": false
+				},
+				{
+					"answer": "## this is a comment",
+					"feedback": false
+				},
+				{
+					"answer": "-- this is a comment",
+					"feedback": false
+				}
+			]
+		},
+		{
+			"question": "Which data type is used to create a variable that should store text",
+			"answers": [
+				{
+					"answer": "String",
+					"feedback": true
+				},
+				{
+					"answer": "string",
+					"feedback": false
+				},
+				{
+					"answer": "myString",
+					"feedback": false
+				},
+				{
+					"answer": "text",
+					"feedback": false
+				}
+			]
+		},
+		{
+			"question": "How do you create a varaible with the numeric value 5?",
+			"answers": [
+				{
+					"answer": "int i = 5;",
+					"feedback": true
+				},
+				{
+					"answer": "x = 5;",
+					"feedback": false
+				},
+				{
+					"answer": "float x = 5;",
+					"feedback": false
+				},
+				{
+					"answer": "num x = 6 - 1;",
+					"feedback": false
+				}
+			]
+		},
+		{
+			"question": "How do you create a variable with the floating number 2.8?",
+			"answers": [
+				{
+					"answer": "float x = 2.8f;",
+					"feedback": true
+				},
+				{
+					"answer": "int x = 2.8;",
+					"feedback": false
+				},
+				{
+					"answer": "double i = 2.5;",
+					"feedback": false
+				},
+				{
+					"answer": "short x = 0;",
+					"feedback": false
+				}
+			]
+		},
+		{
+			"question": "Which operator is used to add together two values",
+			"answers": [
+				{
+					"answer": "Value1 + Value2",
+					"feedback": true
+				},
+				{
+					"answer": "Value1 - Value2",
+					"feedback": false
+				},
+				{
+					"answer": "Value1 * Value2",
+					"feedback": false
+				},
+				{
+					"answer": "Value1 / Value2",
+					"feedback": false
+				}
+			]
+		}
+	]
+}
