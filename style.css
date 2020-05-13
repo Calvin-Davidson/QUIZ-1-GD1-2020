@@ -110,3 +110,26 @@ body{
   background-color: yellow;
   cursor: pointer;
 }
+
+
+#NameInput {
+  list-style-type: none;
+  padding: 10px;
+  background-color:white;
+  border:4px solid #FF8F2F;
+  border-radius: 12px;
+}
+#NameInput:focus, input:focus{
+  outline: none;
+}
+#submitName:focus, input:focus{
+  outline: none;
+}
+
+#submitName {
+  list-style-type: none;
+  padding: 10px;
+  background-color:white;
+  border:4px solid #FF8F2F;
+  border-radius: 12px;
+}

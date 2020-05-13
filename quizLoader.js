@@ -20,9 +20,7 @@ function loadQuizPicker() {
 }
 
 function onClick(evt) {
-    console.log(evt.target.quizPath);
-
-    init(evt.target.quizPath);
+    askname(evt.target.quizPath);
 }
 
 

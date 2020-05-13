@@ -5,8 +5,6 @@ const quizWrapper = document.getElementById('quizWrapper');
 const questionBox = document.getElementById('questionBox');
 const resultBox = document.getElementById('resultBox');
 
-let quizJsonFiles = ["QuizVragen/quiz2.json", "QuizVragen/quiz1.json"]; // het JSON bestand met de quizz
-
 let counter = 0;
 let quiz;
 let playerData = {}; // object, hierin worden de game gegevens opgeslagen
@@ -29,7 +27,6 @@ function initQuiz() {
     // reset alle player game variabelen
     playerData.goodAnswers = 0;
     playerData.wrongAnswers = 0;
-    playerData.name = prompt("wat is uw naam?"); // toekomstige uitbreiding naam speler opvragen
 
     VragenVolgorde = [];
 
